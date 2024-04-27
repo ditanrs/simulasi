@@ -1,34 +1,55 @@
+<script setup>
+const supabase = useSupabaseClient();
+const { data: reseps, refresh } = useAsyncData("resep", async () => {
+  const { data, error } = await supabase.from("tbl_resep").select().order("id", { ascending: false });
+  if (error) throw error;
+  return data;
+});
+
+const form = ref({
+  no_resep: "",
+  tgl_resep: "",
+  nama_pasien: "",
+  nama_dokter: "",
+  nama_obat: "",
+  jumlah: "",
+});
+const kirimData = async () => {
+  const { error } = await supabase.from("tbl_resep").insert([form.value]);
+  if (error) throw error;
+  else refresh();
+};
+</script>
 <template>
   <div class="container-fluid">
     <div class="text-center mb-5">
       <h3>KELOLA RESEP</h3>
     </div>
     <div class="card">
-      <form>
+      <form @submit.prevent="kirimData">
         <div class="mb-3 mt-5 container">
           <div class="row">
-            
             <div class="col-lg-6 pt-2">
-              <input type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="No resep" />
+              <input v-model="form.no_resep" type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="No resep" />
             </div>
             <div class="col-lg-6 pt-2">
-              <input type="date" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Tanggal" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6 pt-2">
-              <input type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Nama Pasien" />
-            </div>
-            <div class="col-lg-6 pt-2">
-              <input type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Nama Dokter" />
+              <input v-model="form.tgl_resep" type="date" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Tanggal" />
             </div>
           </div>
           <div class="row">
             <div class="col-lg-6 pt-2">
-              <input type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Nama Obat" />
+              <input v-model="form.nama_pasien" type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Nama Pasien" />
             </div>
             <div class="col-lg-6 pt-2">
-              <input type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Jumlah obat" />
+              <input v-model="form.nama_dokter" type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Nama Dokter" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 pt-2">
+              <input v-model="form.nama_obat" type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Nama Obat" />
+            </div>
+            <div class="col-lg-6 pt-2">
+              <input v-model="form.jumlah" type="text" class="form-control form-control-lg border-dark rounded-2 me-5 mb-2" placeholder="Jumlah obat" />
             </div>
           </div>
         </div>
@@ -52,10 +73,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+              <tr v-for="(resep, i) in reseps" :key="i">
+                <td>{{ resep.no_resep }}</td>
+                <td>{{ resep.tgl_resep }}</td>
+                <td>{{ resep.nama_pasien }}</td>
+                <td>{{ resep.nama_dokter }}</td>
+                <td>{{ resep.nama_obat }}</td>
+                <td>{{ resep.jumlah}}</td>
               </tr>
             </tbody>
           </table>

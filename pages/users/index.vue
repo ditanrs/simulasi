@@ -1,3 +1,8 @@
+<script setup>
+const supabase = useSupabaseClient();
+const user = useSupabaseUser();
+</script>
+
 <template>
   <div class="container-fluid">
     <div class="text-center mb-5">
