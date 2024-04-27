@@ -4,7 +4,6 @@ const user = useSupabaseUser();
 <template>
   <div>
     <div class="container-fluid p-0">
-      <Header />
       <span v-if="user">
         <Header v-if="user.user_metadata.tipe_user === 'admin'" />
         <HeaderA v-if="user.user_metadata.tipe_user === 'apoteker'" />

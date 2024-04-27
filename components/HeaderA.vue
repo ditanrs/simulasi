@@ -3,12 +3,12 @@
     <div class="container-fluid">
       <div class="col-lg-1">
         <NuxtLink to="/">
-          <img src="assets/img/apoteker.png" alt="logo" class="logo" />
+          <img src="assets/img/logo.png" alt="logo" class="logo" />
         </NuxtLink>
       </div>
       <div class="col me-5">
         <h6>APOTEK XYZ</h6>
-        <p>ADMIN</p>
+        <p>APOTEKER</p>
       </div>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -19,7 +19,7 @@
           <div class="col-md offset-md-2">
             <div class="offcanvas-header">
               <NuxtLink to="/">
-                <img src="assets/img/admin.png" alt="admin" />
+                <img src="assets/img/apoteker.png" alt="apoteker" />
               </NuxtLink>
             </div>
             <div class="d-grid gap-2 px-2">

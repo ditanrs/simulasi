@@ -11,7 +11,7 @@ const supabase = useSupabaseClient();
       </div>
       <div class="col me-5">
         <h6>APOTEK XYZ</h6>
-        <p>ADMIN</p>
+        <p>KASIR</p>
       </div>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -22,7 +22,7 @@ const supabase = useSupabaseClient();
           <div class="col-md offset-md-2">
             <div class="offcanvas-header">
               <NuxtLink to="/">
-                <img src="assets/img/kasir.png" alt="admin" />
+                <img src="assets/img/kasir.png" alt="kasir" />
               </NuxtLink>
             </div>
             <div class="d-grid gap-2 px-2">
@@ -32,7 +32,7 @@ const supabase = useSupabaseClient();
               <div class="btn1">
                 <NuxtLink to="/transaksi/tranResep" class="btn btn-light border-dark">Transaksi Resep</NuxtLink>
               </div>
-              <NuxtLink class="btn btn-danger mt-3" to="/logout">Logout</NuxtLink>
+              <NuxtLink class="btn btn-danger mt-3" to="/Logout">Logout</NuxtLink>
             </div>
           </div>
         </div>
@@ -45,7 +45,9 @@ const supabase = useSupabaseClient();
 .logo {
   width: 50px;
 }
-
+.btn1 {
+  width: 20vw;
+}
 img {
   width: 70%;
 }
@@ -62,7 +64,7 @@ img {
   width: 70%;
 }
 nav {
-  width: 100%;
+  width: 100vw;
   box-shadow: 0px 5px 5px #888888;
 }
 .offcanvas {
