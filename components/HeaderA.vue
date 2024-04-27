@@ -1,12 +1,9 @@
-<script setup>
-const supabase = useSupabaseClient();
-</script>
 <template>
   <nav class="navbar bg-light">
     <div class="container-fluid">
       <div class="col-lg-1">
         <NuxtLink to="/">
-          <img src="assets/img/logo.png" alt="logo" class="logo" />
+          <img src="assets/img/apoteker.png" alt="logo" class="logo" />
         </NuxtLink>
       </div>
       <div class="col me-5">
@@ -27,16 +24,10 @@ const supabase = useSupabaseClient();
             </div>
             <div class="d-grid gap-2 px-2">
               <div class="btn1">
-                <NuxtLink to="/users" class="btn btn-light border-dark">Kelola User</NuxtLink>
+                <NuxtLink to="/resep" class="btn btn-light border-dark">Kelola Resep</NuxtLink>
               </div>
               <div class="btn1">
                 <NuxtLink to="/obat" class="btn btn-light border-dark">Kelola Obat</NuxtLink>
-              </div>
-              <div class="btn1">
-                <NuxtLink to="/laporan" class="btn btn-light border-dark">Kelola Laporan</NuxtLink>
-              </div>
-              <div class="btn1">
-                <NuxtLink to="/activity" class="btn btn-light border-dark">Log Activity</NuxtLink>
               </div>
               <NuxtLink class="btn btn-danger mt-3" to="/logout">Logout</NuxtLink>
             </div>

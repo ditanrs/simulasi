@@ -22,21 +22,15 @@ const supabase = useSupabaseClient();
           <div class="col-md offset-md-2">
             <div class="offcanvas-header">
               <NuxtLink to="/">
-                <img src="assets/img/admin.png" alt="admin" />
+                <img src="assets/img/kasir.png" alt="admin" />
               </NuxtLink>
             </div>
             <div class="d-grid gap-2 px-2">
               <div class="btn1">
-                <NuxtLink to="/users" class="btn btn-light border-dark">Kelola User</NuxtLink>
+                <NuxtLink to="/transaksi/tranObat" class="btn btn-light border-dark">Transaksi Obat</NuxtLink>
               </div>
               <div class="btn1">
-                <NuxtLink to="/obat" class="btn btn-light border-dark">Kelola Obat</NuxtLink>
-              </div>
-              <div class="btn1">
-                <NuxtLink to="/laporan" class="btn btn-light border-dark">Kelola Laporan</NuxtLink>
-              </div>
-              <div class="btn1">
-                <NuxtLink to="/activity" class="btn btn-light border-dark">Log Activity</NuxtLink>
+                <NuxtLink to="/transaksi/tranResep" class="btn btn-light border-dark">Transaksi Resep</NuxtLink>
               </div>
               <NuxtLink class="btn btn-danger mt-3" to="/logout">Logout</NuxtLink>
             </div>
